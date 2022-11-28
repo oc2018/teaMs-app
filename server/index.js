@@ -18,9 +18,9 @@ const PORT = process.env.PORT || 5000;
 app.use('/user', userRoutes);
 app.use('/posts', Auth, postRoutes);
 
-// app.get('/',(req,res) =>{
-//     res.send('Hello world');
-// });
+app.get('/',(req,res) =>{
+    res.send('Welcome to Ontime Tea Management System');
+});
 
 mongoose.connect(process.env.CONNECTION_URL, {useUnifiedTopology: true, useNewUrlParser: true}).then(() => app.listen(PORT, () => console.log(`Running on port: ${PORT}`))).catch((error) => console.log(error));
 
